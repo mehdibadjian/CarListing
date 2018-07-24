@@ -8,31 +8,46 @@
 
 import UIKit
 
+extension DateFormatter {
+  static var sharedDateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    return dateFormatter
+  }()
+}
+
 class HomeViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    //view initializer
     self.title = "Home"
     self.view.backgroundColor = .white
-    
+    self.navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    //table related initializer
     self.tableView.delegate = self
     self.tableView.dataSource = self
     self.tableView.register(ListingCarTableViewCell.self, forCellReuseIdentifier: ListingCarTableViewCell.identifier)
+  }
+  
+  @objc func addTapped() {
 
   }
 
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-
-  
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return HomeDataModel.sharedInstance.numberOfSections()
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return HomeDataModel.sharedInstance.numberOfRows()
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -40,7 +55,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ListingCarTableViewCell", for: indexPath) as! ListingCarTableViewCell
+    let object = HomeDataModel.sharedInstance.objectForIndex(index: indexPath.row)
+    let cell = tableView.dequeueReusableCell(withIdentifier: ListingCarTableViewCell.identifier, for: indexPath) as! ListingCarTableViewCell
+    cell.carLabel.text = object.name
+    cell.priceLabel.text = "$ "+object.price
+    cell.dateAddedLabel.text = DateFormatter.sharedDateFormatter.string(from: object.updateDate)
+    cell.iconImageView.image = UIImage.init(named: "car-placeholder")
     return cell
   }
   

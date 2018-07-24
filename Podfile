@@ -6,7 +6,8 @@ target 'CarListing' do
   use_frameworks!
 
   # Pods for CarListing
-  
+  # UIs
+  pod 'SnapKit', '~> 4.0.0'
   # Network and datas
   pod 'RealmSwift'
 
