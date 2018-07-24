@@ -29,6 +29,8 @@ class HomeViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    //fetch cars
+    HomeDataModel.sharedInstance.fetchCars()
     //table related initializer
     self.tableView.delegate = self
     self.tableView.dataSource = self

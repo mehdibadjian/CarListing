@@ -15,7 +15,6 @@ class HomeDataModel: NSObject {
   // MARK: - Shared Instance
   static let sharedInstance: HomeDataModel = {
     let instance = HomeDataModel()
-    instance.fetchCars()
     return instance
   }()
   

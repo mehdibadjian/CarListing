@@ -41,6 +41,6 @@ class AddViewController: UIViewController {
                               date: Date(),
                               id: (self.carObject?.id)!)
     }
-    self.navigationController?.dismiss(animated: true, completion: nil)
+    self.dismiss(animated: true, completion: nil)
   }
 }
