@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     //view initializer
     self.title = "Home"
     self.view.backgroundColor = .white
-    self.navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -36,9 +36,10 @@ class HomeViewController: UIViewController {
   }
   
   @objc func addTapped() {
-
+    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let tabbarViewController = storyBoard.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController
+    self.present(tabbarViewController, animated: true, completion: nil)
   }
-
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {

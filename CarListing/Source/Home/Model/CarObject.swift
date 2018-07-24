@@ -9,6 +9,7 @@
 import RealmSwift
 
 class CarObject: Object {
+  @objc dynamic var id : Int = 0
   @objc dynamic var name = ""
   @objc dynamic var price = ""
   @objc dynamic var updateDate = Date()
