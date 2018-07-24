@@ -25,6 +25,31 @@ class HomeDataModel: NSObject {
     self.dataModel = (carObjects.count == 0) ? [] : Array(carObjects)
   }
   
+  func addNewCar(name: String, price: String, date: Date) {
+    let car = CarObject()
+    car.name = name
+    car.price = price
+    car.updateDate = Date()
+
+    let realm = try! Realm()
+    try! realm.write {
+      realm.add(car)
+    }
+  }
+  
+  func editCar(name: String, price: String, date: Date, id: Int) {
+    let realm = try! Realm()
+    let cars = realm.objects(CarObject.self).filter("id = %@", id)
+    
+    if let car = cars.first {
+      try! realm.write {
+        car.name = name
+        car.price = price
+        car.updateDate = Date()
+      }
+    }
+  }
+  
   func numberOfRows() -> Int {
     return (self.dataModel?.count)!
   }

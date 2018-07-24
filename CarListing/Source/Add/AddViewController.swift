@@ -9,7 +9,7 @@
 import UIKit
 
 class AddViewController: UIViewController {
-  let _id : CarObject? = nil
+  let carObject : CarObject? = nil
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var typeTF: UITextField!
   @IBOutlet weak var priceTF: UITextField!
@@ -28,11 +28,19 @@ class AddViewController: UIViewController {
   }
   
   @IBAction func BtnSaveSelected(_ sender: Any) {
-    if _id == nil {
+    if self.carObject == nil {
       //new data
+      HomeDataModel().addNewCar(name: typeTF.text!,
+                                price: priceTF.text!,
+                                date: Date())
     }
     else {
       //update data
+      HomeDataModel().editCar(name: typeTF.text!,
+                              price: priceTF.text!,
+                              date: Date(),
+                              id: (self.carObject?.id)!)
     }
+    self.navigationController?.dismiss(animated: true, completion: nil)
   }
 }
