@@ -16,6 +16,7 @@
 		3D71242921070880005C8387 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D71242221070880005C8387 /* Main.storyboard */; };
 		3D71242A21070880005C8387 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D71242421070880005C8387 /* Info.plist */; };
 		3D71242E2107089F005C8387 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D71242C2107089F005C8387 /* HomeViewController.swift */; };
+		3D71243021070F99005C8387 /* ListingCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D71242F21070F99005C8387 /* ListingCarTableViewCell.swift */; };
 		552FA19EEC878595D5E36C25 /* Pods_CarListingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DC78594D0E9CE49FEB9086 /* Pods_CarListingTests.framework */; };
 		6094E911812553146778E4CD /* Pods_CarListingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B70F6CF1B3444D3D26F0C6 /* Pods_CarListingUITests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		3D71242321070880005C8387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D71242421070880005C8387 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D71242C2107089F005C8387 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3D71242F21070F99005C8387 /* ListingCarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCarTableViewCell.swift; sourceTree = "<group>"; };
 		63DFAE4879B983060CA9D8C1 /* Pods-CarListingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarListingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarListingUITests/Pods-CarListingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		67B70F6CF1B3444D3D26F0C6 /* Pods_CarListingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarListingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FBD977598F9160DEF8B85B6 /* Pods-CarListing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarListing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarListing/Pods-CarListing.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				3D71242C2107089F005C8387 /* HomeViewController.swift */,
+				3D71242F21070F99005C8387 /* ListingCarTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			files = (
 				3D71242E2107089F005C8387 /* HomeViewController.swift in Sources */,
 				3D71242621070880005C8387 /* AppDelegate.swift in Sources */,
+				3D71243021070F99005C8387 /* ListingCarTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
